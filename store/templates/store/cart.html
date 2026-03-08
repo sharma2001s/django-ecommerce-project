@@ -1,0 +1,56 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Your Cart</h2>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+
+{% for product in products %}
+
+<tr>
+
+<td>{{ product.name }}</td>
+
+<td>₹ {{ product.price }}</td>
+
+<td>
+
+<a href="/decrease/{{ product.id }}/" class="btn btn-sm btn-danger">-</a>
+
+{{ product.quantity }}
+
+<a href="/increase/{{ product.id }}/" class="btn btn-sm btn-success">+</a>
+
+</td>
+
+<td>₹ {{ product.total_price }}</td>
+
+<td>
+<a href="/remove/{{ product.id }}/" class="btn btn-warning">
+Remove
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+<h4>Total Price: ₹ {{ total }}</h4>
+
+<a href="/checkout/" class="btn btn-success">
+Proceed to Checkout
+</a>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="/">Shivani Shop</a>
+
+    <!-- Search -->
+    <form class="d-flex" method="GET" action="/">
+        <input class="form-control me-2" type="search" placeholder="Search products" name="q">
+        <button class="btn btn-success">Search</button>
+    </form>
+
+    <!-- Right Side Buttons -->
+    <div>
+        <a href="/orders/" class="btn btn-info">
+My Orders
+</a>
+
+        <a href="/cart/" class="btn btn-warning">
+            🛒 Cart ({{ cart_count }})
+        </a>
+
+        <a href="/login/" class="btn btn-light">Login</a>
+
+        <a href="/signup/" class="btn btn-info">Signup</a>
+
+        <a href="/logout/" class="btn btn-danger">Logout</a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+<div class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

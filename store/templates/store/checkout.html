@@ -1,0 +1,49 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Checkout</h2>
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<div class="card shadow p-4">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="mb-3">
+<label class="form-label">Name</label>
+<input type="text" name="name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Address</label>
+<textarea name="address" class="form-control" required></textarea>
+</div>
+
+<div class="mb-3">
+<label class="form-label">City</label>
+<input type="text" name="city" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Pincode</label>
+<input type="text" name="pincode" class="form-control" required>
+</div>
+
+<button class="btn btn-success w-100">
+Place Order
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

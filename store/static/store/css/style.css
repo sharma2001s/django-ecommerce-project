@@ -1,0 +1,30 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* Product Cards */
+.card {
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Product image */
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+}
